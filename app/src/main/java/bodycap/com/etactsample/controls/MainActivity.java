@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements IBluetoothStatusB
         transaction.commit();
 
         BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
         try {
             myBluetoothConnection = new EtactServiceConnection(MainActivity.this, bluetoothAdapter);
         } catch (BluetoothAdapterException e) {
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements IBluetoothStatusB
         super.onResume();
         if(myBluetoothConnection != null) {
             myBluetoothConnection.startConnection();
-//            mainView.updateListView((ArrayList<BluetoothDevice>) myBluetoothConnection.getConnectedPatchs());
         }
     }
 
